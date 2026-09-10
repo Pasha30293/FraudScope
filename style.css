@@ -1051,3 +1051,574 @@ input {
     }
 
 }
+/* =========================================
+   GUIDE PAGE
+========================================= */
+
+.guide-hero {
+    width: min(900px, 88%);
+
+    margin: auto;
+
+    padding:
+        120px 0 70px;
+
+    text-align: center;
+}
+
+
+.guide-hero h1 {
+    margin-bottom: 24px;
+
+    font-size:
+        clamp(42px, 6vw, 70px);
+
+    line-height: 1;
+
+    letter-spacing:
+        -3px;
+}
+
+
+.guide-hero h1 span {
+    display: block;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--red),
+            var(--orange)
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color:
+        transparent;
+}
+
+
+.guide-hero p {
+    max-width: 650px;
+
+    margin: auto;
+
+    color: var(--text-soft);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   WARNING
+========================================= */
+
+.guide-warning {
+    width: min(850px, 88%);
+
+    margin:
+        20px auto 100px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 24px;
+
+    border:
+        1px solid
+        rgba(255, 154, 74, .18);
+
+    border-radius: 18px;
+
+    background:
+        rgba(255, 154, 74, .045);
+}
+
+
+.guide-warning-icon {
+    font-size: 25px;
+}
+
+
+.guide-warning h3 {
+    margin-bottom: 7px;
+
+    font-size: 14px;
+}
+
+
+.guide-warning p {
+    color: var(--text-soft);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   GUIDE SECTION
+========================================= */
+
+.guide-section {
+    width: min(1200px, 88%);
+
+    margin: auto;
+
+    padding:
+        90px 0;
+}
+
+
+.guide-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 14px;
+}
+
+
+.guide-card {
+    position: relative;
+
+    min-height: 270px;
+
+    padding: 30px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        var(--radius);
+
+    background:
+        var(--card);
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        border-color .25s ease;
+}
+
+
+.guide-card:hover {
+    transform:
+        translateY(-5px);
+
+    background:
+        var(--card-hover);
+
+    border-color:
+        rgba(255, 77, 90, .18);
+}
+
+
+.guide-number {
+    position: absolute;
+
+    top: 25px;
+
+    right: 25px;
+
+    color:
+        rgba(255, 255, 255, .15);
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+.guide-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 77, 90, .08);
+
+    font-size: 22px;
+}
+
+
+.guide-card h3 {
+    margin-bottom: 10px;
+
+    font-size: 16px;
+}
+
+
+.guide-card p {
+    color: var(--text-soft);
+
+    font-size: 12px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================
+   PHISHING
+========================================= */
+
+.phishing-section {
+    width: min(900px, 88%);
+
+    margin: auto;
+
+    padding:
+        90px 0;
+}
+
+
+.phishing-example {
+    overflow: hidden;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 20px;
+
+    background:
+        #101218;
+
+    box-shadow:
+        0 30px 70px
+        rgba(0, 0, 0, .3);
+}
+
+
+.browser-top {
+    display: flex;
+
+    gap: 7px;
+
+    padding: 14px 17px;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, .06);
+
+    background:
+        #0c0e13;
+}
+
+
+.browser-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+}
+
+
+.browser-dot.red {
+    background: #ff5c63;
+}
+
+
+.browser-dot.yellow {
+    background: #ffbd4a;
+}
+
+
+.browser-dot.green {
+    background: #55d995;
+}
+
+
+.browser-address {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 18px;
+
+    padding: 11px 14px;
+
+    border-radius: 9px;
+
+    color: #969ba7;
+
+    background:
+        rgba(255, 255, 255, .045);
+
+    font-family: monospace;
+
+    font-size: 11px;
+}
+
+
+.phishing-content {
+    padding:
+        35px;
+
+    text-align: center;
+}
+
+
+.phishing-alert {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin:
+        0 auto 18px;
+
+    border-radius: 17px;
+
+    background:
+        rgba(255, 77, 90, .09);
+
+    font-size: 27px;
+}
+
+
+.phishing-content h3 {
+    margin-bottom: 12px;
+
+    font-size: 19px;
+}
+
+
+.phishing-content p {
+    max-width: 650px;
+
+    margin: auto;
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   CHECKLIST
+========================================= */
+
+.checklist-section {
+    width: min(900px, 88%);
+
+    margin: auto;
+
+    padding:
+        90px 0;
+}
+
+
+.checklist-card {
+    padding: 45px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .08);
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 77, 90, .055),
+            rgba(255, 255, 255, .025)
+        );
+}
+
+
+.checklist-header {
+    margin-bottom: 35px;
+}
+
+
+.checklist-header h2 {
+    max-width: 600px;
+
+    margin-top: 5px;
+
+    font-size:
+        clamp(30px, 4vw, 45px);
+
+    line-height: 1.05;
+
+    letter-spacing:
+        -2px;
+}
+
+
+.checklist {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.checklist-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 255, 255, .035);
+}
+
+
+.checklist-item > span {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    color: #ff8a91;
+
+    background:
+        rgba(255, 77, 90, .08);
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+.checklist-item p {
+    color: #c9ccd4;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   GUIDE CTA
+========================================= */
+
+.guide-cta {
+    width: min(800px, 88%);
+
+    margin:
+        50px auto 120px;
+
+    text-align: center;
+}
+
+
+.guide-cta-icon {
+    margin-bottom: 20px;
+
+    font-size: 40px;
+}
+
+
+.guide-cta h2 {
+    margin-bottom: 17px;
+
+    font-size:
+        clamp(30px, 5vw, 50px);
+
+    line-height: 1;
+
+    letter-spacing:
+        -2px;
+}
+
+
+.guide-cta p {
+    max-width: 620px;
+
+    margin:
+        0 auto 28px;
+
+    color: var(--text-soft);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   GUIDE MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .guide-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .guide-hero {
+        padding:
+            80px 0 55px;
+    }
+
+
+    .guide-hero h1 {
+        letter-spacing:
+            -2px;
+    }
+
+
+    .guide-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .guide-warning {
+        margin-bottom: 60px;
+    }
+
+
+    .checklist-card {
+        padding: 28px 20px;
+    }
+
+
+    .phishing-content {
+        padding: 25px 20px;
+    }
+
+}
