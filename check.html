@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="FraudScope — проверка подозрительных ссылок."
+    >
+
+    <title>Проверка — FraudScope</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+
+            <div class="logo-icon">
+                🛡
+            </div>
+
+            <span>
+                FraudScope
+            </span>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Главная
+            </a>
+
+            <a href="index.html#features">
+                Возможности
+            </a>
+
+            <a href="index.html#security">
+                Безопасность
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- CHECK -->
+
+    <main class="check-page">
+
+
+        <section class="check-container">
+
+
+            <div class="badge">
+                <span class="badge-dot"></span>
+                Проверка безопасности
+            </div>
+
+
+            <h1>
+                Проверьте ссылку
+            </h1>
+
+
+            <p class="check-description">
+                Вставьте подозрительную ссылку,
+                чтобы получить предварительную
+                оценку риска.
+            </p>
+
+
+            <!-- INPUT -->
+
+            <form
+                class="check-form"
+                id="checkForm"
+            >
+
+                <div class="url-input-wrapper">
+
+                    <span>
+                        🔗
+                    </span>
+
+                    <input
+                        type="url"
+                        id="urlInput"
+                        placeholder="https://example.com"
+                        autocomplete="off"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="button button-primary"
+                >
+                    Проверить
+                </button>
+
+            </form>
+
+
+            <p class="check-note">
+                ⚠️ Результат является предварительной
+                оценкой и не гарантирует безопасность сайта.
+            </p>
+
+
+
+            <!-- RESULT -->
+
+            <div
+                class="check-result"
+                id="checkResult"
+            >
+
+                <div class="result-icon">
+                    🔎
+                </div>
+
+                <h2>
+                    Ожидание проверки
+                </h2>
+
+                <p>
+                    Введите ссылку выше.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            🛡 FraudScope
+        </div>
+
+        <p>
+            Инструмент для анализа
+            потенциальных угроз.
+        </p>
+
+        <span>
+            © 2026 FraudScope
+        </span>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+
+    <script>
+
+        const checkForm =
+            document.getElementById("checkForm");
+
+        const urlInput =
+            document.getElementById("urlInput");
+
+        const result =
+            document.getElementById("checkResult");
+
+
+        checkForm.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                const url =
+                    urlInput.value.trim();
+
+
+                if (!url) {
+                    return;
+                }
+
+
+                /*
+                    Пока это демонстрационная проверка.
+
+                    Настоящий анализ подключим
+                    через backend/API.
+                */
+
+
+                result.className =
+                    "check-result checking";
+
+
+                result.innerHTML = `
+                    <div class="result-icon">
+                        🔎
+                    </div>
+
+                    <h2>
+                        Анализируем...
+                    </h2>
+
+                    <p>
+                        FraudScope проверяет
+                        указанный адрес.
+                    </p>
+
+                    <div class="loading-bar">
+                        <div></div>
+                    </div>
+                `;
+
+
+                setTimeout(
+                    () => {
+
+                        showDemoResult(url);
+
+                    },
+                    1800
+                );
+
+            }
+        );
+
+
+        function showDemoResult(url) {
+
+            const suspiciousWords = [
+                "login",
+                "verify",
+                "secure",
+                "account",
+                "password",
+                "confirm",
+                "bonus",
+                "free",
+                "gift"
+            ];
+
+
+            const lowerUrl =
+                url.toLowerCase();
+
+
+            const foundWords =
+                suspiciousWords.filter(
+                    word =>
+                        lowerUrl.includes(word)
+                );
+
+
+            let risk = 12;
+
+
+            if (foundWords.length > 0) {
+
+                risk +=
+                    foundWords.length * 15;
+
+            }
+
+
+            if (url.includes("@")) {
+
+                risk += 20;
+
+            }
+
+
+            if (risk > 95) {
+                risk = 95;
+            }
+
+
+            let status;
+            let icon;
+            let color;
+
+
+            if (risk >= 60) {
+
+                status =
+                    "Высокий риск";
+
+                icon =
+                    "⚠️";
+
+                color =
+                    "danger";
+
+            } else if (risk >= 30) {
+
+                status =
+                    "Требует внимания";
+
+                icon =
+                    "🟠";
+
+                color =
+                    "warning";
+
+            } else {
+
+                status =
+                    "Низкий риск";
+
+                icon =
+                    "🟢";
+
+                color =
+                    "safe";
+
+            }
+
+
+            result.className =
+                `check-result ${color}`;
+
+
+            result.innerHTML = `
+
+                <div class="result-icon">
+                    ${icon}
+                </div>
+
+                <h2>
+                    ${status}
+                </h2>
+
+                <div class="result-risk">
+                    ${risk}%
+                </div>
+
+                <div class="result-bar">
+                    <div
+                        style="width: ${risk}%"
+                    ></div>
+                </div>
+
+                <p>
+                    Проверка адреса:
+                </p>
+
+                <code>
+                    ${escapeHtml(url)}
+                </code>
+
+                ${
+                    foundWords.length
+                    ? `
+                        <div class="result-warning">
+                            ⚠️ Обнаружены признаки,
+                            требующие дополнительной проверки.
+                        </div>
+                    `
+                    : `
+                        <div class="result-safe">
+                            ✓ Явных подозрительных
+                            признаков не обнаружено.
+                        </div>
+                    `
+                }
+
+            `;
+
+        }
+
+
+        function escapeHtml(text) {
+
+            const div =
+                document.createElement("div");
+
+            div.textContent =
+                text;
+
+            return div.innerHTML;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
