@@ -570,3 +570,484 @@ input {
     }
 
 }
+/* =========================================
+   ABOUT PAGE
+========================================= */
+
+.about-hero {
+    width: min(900px, 88%);
+
+    margin: auto;
+
+    padding:
+        120px 0 90px;
+
+    text-align: center;
+}
+
+
+.about-hero h1 {
+    margin-bottom: 25px;
+
+    font-size:
+        clamp(45px, 7vw, 75px);
+
+    line-height: 1;
+
+    letter-spacing:
+        -4px;
+}
+
+
+.about-hero h1 span {
+    display: block;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--red),
+            var(--orange)
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color:
+        transparent;
+}
+
+
+.about-hero p {
+    max-width: 650px;
+
+    margin: auto;
+
+    color: var(--text-soft);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   ABOUT SECTION
+========================================= */
+
+.about-section {
+    width: min(1000px, 88%);
+
+    margin: auto;
+
+    padding:
+        40px 0 100px;
+}
+
+
+.about-card {
+    display: grid;
+
+    grid-template-columns:
+        110px 1fr;
+
+    gap: 35px;
+
+    padding: 45px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 77, 90, .07),
+            rgba(255, 255, 255, .025)
+        );
+}
+
+
+.about-card-icon {
+    width: 80px;
+    height: 80px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 22px;
+
+    background:
+        rgba(255, 77, 90, .08);
+
+    font-size: 34px;
+}
+
+
+.about-card h2 {
+    max-width: 650px;
+
+    margin:
+        5px 0 20px;
+
+    font-size:
+        clamp(30px, 4vw, 46px);
+
+    line-height: 1.05;
+
+    letter-spacing:
+        -2px;
+}
+
+
+.about-card p {
+    max-width: 680px;
+
+    margin-bottom: 15px;
+
+    color: var(--text-soft);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   PRINCIPLES
+========================================= */
+
+.principles {
+    width: min(1200px, 88%);
+
+    margin: auto;
+
+    padding:
+        100px 0;
+}
+
+
+.principles-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+
+.principle {
+    position: relative;
+
+    padding: 30px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        var(--radius);
+
+    background:
+        var(--card);
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        border-color .25s ease;
+}
+
+
+.principle:hover {
+    transform:
+        translateY(-5px);
+
+    background:
+        var(--card-hover);
+
+    border-color:
+        rgba(255, 77, 90, .18);
+}
+
+
+.principle > span {
+    position: absolute;
+
+    top: 25px;
+
+    right: 25px;
+
+    color:
+        rgba(255, 255, 255, .2);
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+.principle-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 22px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 77, 90, .08);
+
+    font-size: 21px;
+}
+
+
+.principle h3 {
+    margin-bottom: 10px;
+
+    font-size: 17px;
+}
+
+
+.principle p {
+    color: var(--text-soft);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   ROADMAP
+========================================= */
+
+.roadmap {
+    width: min(900px, 88%);
+
+    margin: auto;
+
+    padding:
+        100px 0;
+}
+
+
+.roadmap-list {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 30px;
+}
+
+
+.roadmap-list::before {
+    content: "";
+
+    position: absolute;
+
+    left: 20px;
+
+    top: 20px;
+
+    bottom: 20px;
+
+    width: 1px;
+
+    background:
+        rgba(255, 255, 255, .08);
+}
+
+
+.roadmap-item {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        42px 1fr;
+
+    gap: 22px;
+
+    align-items: start;
+}
+
+
+.roadmap-marker {
+    position: relative;
+
+    z-index: 2;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .1);
+
+    border-radius: 50%;
+
+    color: var(--text-muted);
+
+    background:
+        var(--bg);
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+.roadmap-item.active
+.roadmap-marker {
+    color: white;
+
+    background:
+        var(--red);
+
+    border-color:
+        var(--red);
+
+    box-shadow:
+        0 0 20px
+        rgba(255, 77, 90, .2);
+}
+
+
+.roadmap-item span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color:
+        var(--red);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+
+.roadmap-item h3 {
+    margin-bottom: 8px;
+
+    font-size: 18px;
+}
+
+
+.roadmap-item p {
+    max-width: 550px;
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   DISCLAIMER
+========================================= */
+
+.about-disclaimer {
+    width: min(900px, 88%);
+
+    margin:
+        40px auto 120px;
+
+    display: flex;
+
+    gap: 18px;
+
+    padding: 25px;
+
+    border:
+        1px solid
+        rgba(255, 160, 70, .14);
+
+    border-radius: 17px;
+
+    background:
+        rgba(255, 160, 70, .04);
+}
+
+
+.disclaimer-icon {
+    font-size: 22px;
+}
+
+
+.about-disclaimer h3 {
+    margin-bottom: 7px;
+
+    font-size: 14px;
+}
+
+
+.about-disclaimer p {
+    color: var(--text-soft);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   ABOUT MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .about-hero {
+        padding:
+            80px 0 60px;
+    }
+
+
+    .about-hero h1 {
+        letter-spacing:
+            -2.5px;
+    }
+
+
+    .about-card {
+        grid-template-columns: 1fr;
+
+        padding: 30px;
+    }
+
+
+    .principles-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .roadmap {
+        padding:
+            70px 0;
+    }
+
+
+    .about-disclaimer {
+        margin-bottom: 70px;
+    }
+
+}
